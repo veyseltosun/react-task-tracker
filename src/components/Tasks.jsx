@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
-import { initialState } from '../store/initialState'
+
 import TaskItem from './TaskItem'
 
 
-export default function Tasks() {
-    const [tasks, setTasks] = useState(initialState)
+export default function Tasks({tasks}) {
+   
   return (
     
     <div>
