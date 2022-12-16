@@ -2,6 +2,7 @@ import { initialState } from './store/initialState'
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 import { useState } from 'react';
+import AddTask from './components/AddTask';
 
 function App() {
   const [tasks, setTasks] = useState(initialState)
@@ -18,6 +19,7 @@ function App() {
   return (
     <div className='container'>
       <Header title="Task Tracker as Prop"/>
+      <AddTask/>
       <Tasks tasks={tasks} onDelete={onDelete} />
      
     </div>
