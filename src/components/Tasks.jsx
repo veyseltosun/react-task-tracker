@@ -2,7 +2,7 @@
 import TaskItem from './TaskItem'
 
 
-export default function Tasks({tasks, onDelete}) {
+export default function Tasks({tasks, onDelete, toggleDone}) {
    
   return (
     
@@ -10,7 +10,7 @@ export default function Tasks({tasks, onDelete}) {
         {tasks.map((task)=> {
             const{id, text, day, isDone} = task
             return(
-                <TaskItem task={task} key={id} onDelete={onDelete}/>
+                <TaskItem task={task} key={id} onDelete={onDelete} toggleDone={toggleDone}/>
             )
             
             

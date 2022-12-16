@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function AddTask() {
+function AddTask({onCreate}) {
     const [text, setText] = useState("");
     const [day, setDay] = useState("");
     const handleTextChange = (e) =>{
@@ -8,8 +8,22 @@ function AddTask() {
 
     }
     const handleDayChange = (e) => setDay(e.target.value)
+
+    const onSubmit=(e) => {
+      
+        e.preventDefault();
+        if(!text || !day){
+            alert("Please fill both fields")
+        }else{
+
+            onCreate({text, day, isDone:false})
+            setDay("");
+            setText("");
+        }
+    }
+
   return (
-    <form className="add-form" >
+    <form className="add-form" onSubmit={onSubmit} >
       <div className="form-control">
         <label htmlFor="task">Task</label>
         <input
